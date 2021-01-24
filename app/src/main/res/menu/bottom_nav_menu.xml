@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/map_navigation"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_map" />
+
+    <item
+        android:id="@+id/nearby_navigation"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/title_nearby" />
+
+    <item
+        android:id="@+id/notifications_navigation"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="@string/title_notifications" />
+
+</menu>

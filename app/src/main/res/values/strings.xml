@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">NavigationTestApp</string>
+    <string name="title_map">Map</string>
+    <string name="title_nearby">Nearby</string>
+    <string name="title_favorites">Favorites</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_place_detail">Place detail</string>
+    <string name="title_store">Store</string>
+    <string name="go_to_location_button">Go to location</string>
+    <string name="write_review_button">Write a review</string>
+    <string name="install_button">Install</string>
+    <string name="send_review_button">Send</string>
+    <string name="review_sent_text">Review sent successfully</string>
+</resources>

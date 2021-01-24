@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/place_details"
+    app:startDestination="@+id/placeDetailScreen">
+
+    <fragment
+        android:id="@+id/placeDetailScreen"
+        android:name="com.example.navigationtestapp.ui.place.PlaceDetailsFragment"
+        android:label="@string/title_place_detail"
+        tools:layout="@layout/fragment_place_detail">
+        <argument
+            android:name="place"
+            app:argType="com.example.navigationtestapp.models.Place" />
+        <action
+            android:id="@+id/action_place_details_to_write_review"
+            app:destination="@id/writeReviewScreen" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/writeReviewScreen"
+        android:name="com.example.navigationtestapp.ui.place.WriteReviewFragment"
+        tools:layout="@layout/fragment_write_review">
+        <action
+            android:id="@+id/action_write_review_to_review_sent"
+            app:destination="@id/reviewSentScreen"
+            app:popUpTo="@id/placeDetailScreen" />
+    </dialog>
+
+    <dialog
+        android:id="@+id/reviewSentScreen"
+        android:name="com.example.navigationtestapp.ui.place.ReviewSentDialog" />
+
+</navigation>

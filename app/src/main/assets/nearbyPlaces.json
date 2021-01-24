@@ -1,0 +1,118 @@
+[
+  {
+    "id": "PLA1",
+    "name": "Starbucks",
+    "distance": "100 m",
+    "type": "Coffee",
+    "imageUrl": "https://logos-download.com/wp-content/uploads/2016/03/Starbucks_logo_emblem_logotype.png",
+    "latLong": [
+      40.75578057805433,
+      -73.99381599126036
+    ]
+  },
+  {
+    "id": "PLA2",
+    "name": "ATM",
+    "distance": "100 m",
+    "type": "ATM",
+    "imageUrl": "https://logos-download.com/wp-content/uploads/2019/11/ATMChain_ATM_Logo.png"
+  },
+  {
+    "id": "PLA3",
+    "name": "McDonald´s",
+    "distance": "150 m",
+    "type": "Fast food",
+    "imageUrl": "https://logos-download.com/wp-content/uploads/2016/03/McDonalds_logo_red.png"
+  },
+  {
+    "id": "PLA4",
+    "name": "Zara",
+    "distance": "150 m",
+    "type": "Clothing store",
+    "imageUrl": "https://logos-download.com/wp-content/uploads/2016/02/Zara_Logo_png_transparent.png"
+  },
+  {
+    "id": "PLA5",
+    "name": "Subway",
+    "distance": "200 m",
+    "type": "Fast food",
+    "imageUrl": "https://logos-download.com/wp-content/uploads/2016/03/Subway_logo_logotype_emblem.png"
+  },
+  {
+    "id": "PLA6",
+    "name": "KFC",
+    "distance": "250 m",
+    "type": "Fast food",
+    "imageUrl": "https://logos-download.com/wp-content/uploads/2016/03/KFC_logo_emblem_logotype.png"
+  },
+  {
+    "id": "PLA7",
+    "name": "Central Station",
+    "distance": "280 m",
+    "type": "Train station",
+    "imageUrl": "https://logos-download.com/wp-content/uploads/2019/07/Kimanis_Railway_Station_Logo.png"
+  },
+  {
+    "id": "PLA8",
+    "name": "Pizza Hut",
+    "distance": "300 m",
+    "type": "Pizza",
+    "imageUrl": "https://logos-download.com/wp-content/uploads/2016/04/Pizza_Hut_logo_red.png"
+  },
+  {
+    "id": "PLA9",
+    "name": "Domino´s",
+    "distance": "300 m",
+    "type": "Pizza",
+    "imageUrl": "https://logos-download.com/wp-content/uploads/2019/01/Dominos_Pizza_Logo.png"
+  },
+  {
+    "id": "PLA10",
+    "name": "Greatest Building",
+    "distance": "320 m",
+    "type": "Touristic attraction",
+    "imageUrl": "https://logos-download.com/wp-content/uploads/2019/07/Izhevsk_Machinebuilding_Plant_Logo.png"
+  },
+  {
+    "id": "PLA11",
+    "name": "Awesome Museum",
+    "distance": "330 m",
+    "type": "National museum",
+    "imageUrl": "https://logos-download.com/wp-content/uploads/2019/01/Street_Art_Museum_Logo.png"
+  },
+  {
+    "id": "PLA12",
+    "name": "Taco Bell",
+    "distance": "350 m",
+    "type": "Mexican food",
+    "imageUrl": "https://logos-download.com/wp-content/uploads/2018/09/Taco_Bell_Logo.png"
+  },
+  {
+    "id": "PLA13",
+    "name": "Biggest Arena",
+    "distance": "400 m",
+    "type": "Arena",
+    "imageUrl": "https://logos-download.com/wp-content/uploads/2018/03/Arena_logo_black.png"
+  },
+  {
+    "id": "PLA14",
+    "name": "Street Market",
+    "distance": "430 m",
+    "type": "Hypermarket",
+    "imageUrl": "https://logos-download.com/wp-content/uploads/2019/11/Healthy_Living_Market_Logo.png"
+  },
+  {
+    "id": "PLA15",
+    "name": " City University",
+    "distance": "470 m",
+    "type": "University",
+    "imageUrl": "https://logos-download.com/wp-content/uploads/2020/07/Binghamton_University_Logo.png"
+  },
+  {
+    "id": "PLA16",
+    "name": "Fancy Hospital",
+    "distance": "500 m",
+    "type": "Private hospital",
+    "imageUrl": "https://logos-download.com/wp-content/uploads/2019/11/Clinton_Memorial_Hospital_Logo.png"
+  }
+]

@@ -1,0 +1,100 @@
+{
+  "places": [
+    {
+      "name": "Starbucks",
+      "distance": "100 m",
+      "type": "Coffee",
+      "imageUrl": "App update"
+    },
+    {
+      "name": "ATM",
+      "distance": "100 m",
+      "type": "ATM",
+      "imageUrl": "App update"
+    },
+    {
+      "name": "McDonald´s",
+      "distance": "150 m",
+      "type": "Fast food",
+      "imageUrl": "App update"
+    },
+    {
+      "name": "Zara",
+      "distance": "150 m",
+      "type": "Clothing store",
+      "imageUrl": "App update"
+    },
+    {
+      "name": "Subway",
+      "distance": "200 m",
+      "type": "Fast food",
+      "imageUrl": "App update"
+    },
+    {
+      "name": "KFC",
+      "distance": "250 m",
+      "type": "Fast food",
+      "imageUrl": "App update"
+    },
+    {
+      "name": "Central Station",
+      "distance": "280 m",
+      "type": "Train station",
+      "imageUrl": "App update"
+    },
+    {
+      "name": "Pizza Hut",
+      "distance": "300 m",
+      "type": "Pizza",
+      "imageUrl": "App update"
+    },
+    {
+      "name": "Domino´s",
+      "distance": "300 m",
+      "type": "Pizza",
+      "imageUrl": "App update"
+    },
+    {
+      "name": "Greatest Building",
+      "distance": "320 m",
+      "type": "Touristic attraction",
+      "imageUrl": "App update"
+    },
+    {
+      "name": "Awesome Museum",
+      "distance": "330 m",
+      "type": "National museum",
+      "imageUrl": "App update"
+    },
+    {
+      "name": "Taco Bell",
+      "distance": "350 m",
+      "type": "Mexican food",
+      "imageUrl": "App update"
+    },
+    {
+      "name": "Biggest Arena",
+      "distance": "400 m",
+      "type": "Arena",
+      "imageUrl": "App update"
+    },
+    {
+      "name": "Street Market",
+      "distance": "430 m",
+      "type": "Hypermarket",
+      "imageUrl": "App update"
+    },
+    {
+      "name": " City University",
+      "distance": "470 m",
+      "type": "University",
+      "imageUrl": "App update"
+    },
+    {
+      "name": "Fancy Hospital",
+      "distance": "500 m",
+      "type": "Private hospital",
+      "imageUrl": "App update"
+    }
+  ]
+}

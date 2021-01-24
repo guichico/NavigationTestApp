@@ -1,0 +1,20 @@
+[
+  {
+    "title": "App update",
+    "subTitle": "There is a new app version available. Tap here to update your app.",
+    "type": "PRODUCT",
+    "referenceId": "PRD1"
+  },
+  {
+    "title": "New voice available",
+    "subTitle": "Tap here to see the new voice available.",
+    "type": "PRODUCT",
+    "referenceId": "PRD2"
+  },
+  {
+    "title": "Have been in McDonald´s?",
+    "subTitle": "Tap here to write a review and help others.",
+    "type": "PLACE",
+    "referenceId": "PLA3"
+  }
+]

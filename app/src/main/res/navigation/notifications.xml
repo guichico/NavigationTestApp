@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/notifications_navigation"
+    app:startDestination="@+id/notificationsScreen">
+
+    <fragment
+        android:id="@+id/notificationsScreen"
+        android:name="com.example.navigationtestapp.ui.notifications.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications">
+        <action
+            android:id="@+id/action_notification_to_place"
+            app:destination="@id/place_details">
+            <argument
+                android:name="place"
+                app:argType="com.example.navigationtestapp.models.Place" />
+        </action>
+        <action
+            android:id="@+id/action_notification_to_product_detail"
+            app:destination="@id/productDetailScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailScreen"
+        android:name="com.example.navigationtestapp.ui.store.ProductDetailFragment"
+        android:label="@string/title_store"
+        tools:layout="@layout/fragment_product_detail">
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
+
+    <include app:graph="@navigation/place_details" />
+
+</navigation>

@@ -1,0 +1,16 @@
+{
+  "notifications" :[
+    {
+      "title":"App update",
+      "subTitle": "There is a new app version available. Tap here to update your app."
+    },
+    {
+      "title":"New voice available",
+      "subTitle": "Tap here to see the new voice available."
+    },
+    {
+      "title":"Have been in Lionesa?",
+      "subTitle": "Tap here to write a review and help others."
+    }
+  ]
+}
