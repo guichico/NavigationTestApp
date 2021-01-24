@@ -21,7 +21,6 @@
             android:id="@+id/title_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
             android:text="@{product.title}"
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
             android:textSize="18sp"
