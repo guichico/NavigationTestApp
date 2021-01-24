@@ -12,4 +12,3 @@ object BindingAdapters {
         if (!url.isNullOrEmpty()) imageView.load(url)
     }
 }
-

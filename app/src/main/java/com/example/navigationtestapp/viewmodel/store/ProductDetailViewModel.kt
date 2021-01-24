@@ -19,7 +19,7 @@ class ProductDetailViewModel(private val productsRepository: ProductsRepository)
     fun startDownload() {
         installStatus.postValue(INSTALLING)
 
-        installTask = Timer().schedule(6000) {
+        installTask = Timer().schedule(5000) {
             installStatus.postValue(INSTALLED)
         }
     }

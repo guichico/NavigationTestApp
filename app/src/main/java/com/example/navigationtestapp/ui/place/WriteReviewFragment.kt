@@ -16,7 +16,7 @@ class WriteReviewFragment : BottomSheetDialogFragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val binding =
             DataBindingUtil.inflate(
                 inflater,

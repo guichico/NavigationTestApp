@@ -10,7 +10,6 @@ import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-import kotlinx.coroutines.async
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.flow.collect
 
@@ -43,8 +42,8 @@ class MapService(
 
     suspend fun saveMapLocationAndZoom() {
         coroutineScope {
-            async { userSettings.saveLastLocation(gMap.cameraPosition.target) }
-            async { userSettings.saveZoom(gMap.cameraPosition.zoom) }
+            userSettings.saveLastLocation(gMap.cameraPosition.target)
+            userSettings.saveZoom(gMap.cameraPosition.zoom)
         }
     }
 

@@ -2,7 +2,6 @@ package com.example.navigationtestapp.datastore
 
 import android.content.Context
 import com.google.android.gms.maps.model.LatLng
-import kotlinx.coroutines.async
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
@@ -17,8 +16,8 @@ class UserSettings(val context: Context) {
 
     suspend fun saveLastLocation(latLng: LatLng) {
         coroutineScope {
-            async { settings.set("last_latitude", latLng.latitude) }
-            async { settings.set("last_longitude", latLng.longitude) }
+            settings.set("last_latitude", latLng.latitude)
+            settings.set("last_longitude", latLng.longitude)
         }
     }
 
