@@ -9,6 +9,11 @@
     <string name="title_store">Store</string>
     <string name="title_settings">Settings</string>
     <string name="title_support">Support</string>
+    <string name="title_support_step_1">Support step 1</string>
+    <string name="title_support_step_2">Support step 2</string>
+    <string name="title_support_step_3">Support step 3</string>
+    <string name="title_support_step_4">Support step 4</string>
+    <string name="title_support_step_5">Support step 5</string>
     <string name="see_location_on_map">See location on map</string>
     <string name="add_marker_button">Add marker on map</string>
     <string name="write_review_button">Write a review</string>
@@ -20,6 +25,11 @@
     <string name="settings_menu">Settings</string>
     <string name="downloads_menu">Downloads</string>
     <string name="support_menu">Support</string>
+    <string name="whats_your_doubt">What is your doubt?</string>
     <string name="settings_fragment_text">This is the settings fragment</string>
-    <string name="this_is_the_support_fragment">This is the support fragment</string>
+    <string name="start_support_text">Start support</string>
+    <string name="how_can_i_help_you_text">How can I help you?</string>
+    <string name="pass_you_to_text">I will pass you to the responsible department</string>
+    <string name="are_you_still_here_text">Are you still here?</string>
+    <string name="end_support_and_go_home_text">End support and go home</string>
 </resources>

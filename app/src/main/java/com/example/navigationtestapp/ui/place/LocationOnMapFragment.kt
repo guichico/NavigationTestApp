@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.example.navigationtestapp.R
 import com.example.navigationtestapp.databinding.FragmentLocationOnMapBinding
+import com.example.navigationtestapp.ui.MainActivity
 import com.example.navigationtestapp.viewmodel.place.LocationOnMapViewModel
 import kotlinx.coroutines.runBlocking
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -35,6 +36,8 @@ class LocationOnMapFragment : Fragment() {
 
         val place = args.place
         binding.place = place
+
+        (activity as MainActivity).supportActionBar?.title = place.name
 
         locationOnMapViewModel.moveToLocation(place)
 

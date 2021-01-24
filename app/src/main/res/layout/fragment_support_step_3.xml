@@ -9,14 +9,15 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/background_light">
+        android:background="@android:color/background_light"
+        android:padding="30dp">
 
         <Button
             android:id="@+id/next_step_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="15dp"
-            android:text="@string/start_support_text"
+            android:text="@string/pass_you_to_text"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

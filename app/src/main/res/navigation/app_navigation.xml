@@ -114,6 +114,63 @@
         android:id="@+id/supportScreen"
         android:name="com.example.navigationtestapp.ui.support.SupportFragment"
         android:label="@string/title_support"
-        tools:layout="@layout/fragment_support" />
+        tools:layout="@layout/fragment_support">
+        <action
+            android:id="@+id/action_support_to_step_1"
+            app:destination="@id/supportStep1Screen" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/supportStep1Screen"
+        android:name="com.example.navigationtestapp.ui.support.SupportStep1Fragment"
+        android:label="@string/title_support_step_1"
+        tools:layout="@layout/fragment_support_step_1">
+        <action
+            android:id="@+id/action_step_1_to_step_2"
+            app:destination="@id/supportStep2Screen" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/supportStep2Screen"
+        android:name="com.example.navigationtestapp.ui.support.SupportStep2Fragment"
+        android:label="@string/title_support_step_2"
+        tools:layout="@layout/fragment_support_step_2">
+        <action
+            android:id="@+id/action_step_2_to_step_3"
+            app:destination="@id/supportStep3Screen" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/supportStep3Screen"
+        android:name="com.example.navigationtestapp.ui.support.SupportStep3Fragment"
+        android:label="@string/title_support_step_3"
+        tools:layout="@layout/fragment_support_step_3">
+        <action
+            android:id="@+id/action_step_3_to_step_4"
+            app:destination="@id/supportStep4Screen" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/supportStep4Screen"
+        android:name="com.example.navigationtestapp.ui.support.SupportStep4Fragment"
+        android:label="@string/title_support_step_4"
+        tools:layout="@layout/fragment_support_step_4">
+        <action
+            android:id="@+id/action_step_4_to_step_5"
+            app:destination="@id/supportStep5Screen" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/supportStep5Screen"
+        android:name="com.example.navigationtestapp.ui.support.SupportStep5Fragment"
+        android:label="@string/title_support_step_5"
+        tools:layout="@layout/fragment_support_step_5">
+        <action
+            android:id="@+id/action_support_step_5_to_map"
+            app:destination="@id/mapScreen"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/mapScreen"
+            app:popUpToInclusive="true" />
+    </fragment>
 
 </navigation>
