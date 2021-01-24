@@ -31,7 +31,18 @@ class ProductDetailFragment : Fragment() {
                 false
             ) as FragmentProductDetailBinding
 
+        binding.lifecycleOwner = this
+
         binding.product = productDetailViewModel.getProductDetails(args.id)
+        binding.viewModel = productDetailViewModel
+
+        binding.installButton.setOnClickListener {
+            productDetailViewModel.startDownload()
+        }
+
+        binding.cancelButton.setOnClickListener {
+            productDetailViewModel.cancelDownload()
+        }
 
         return binding.root
     }

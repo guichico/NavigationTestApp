@@ -71,9 +71,9 @@ class MapService(
             }
     }
 
-    suspend fun addMarker(place: Place) {
+    fun addMarker(place: Place) {
         val position = place.latLong.toLatLng()
         gMap.addMarker(MarkerOptions().position(position).title(place.name))
-        moveToLocation(position)
+        moveToLocation(position, DEFAULT_ZOOM)
     }
 }

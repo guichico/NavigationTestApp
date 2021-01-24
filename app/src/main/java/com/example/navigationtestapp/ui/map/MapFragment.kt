@@ -35,8 +35,8 @@ class MapFragment : Fragment() {
 
         val place = args.place as? Place
         place?.let {
-            mapViewModel.moveToLocation(it.latLong.toLatLng())
             mapViewModel.addMarker(it)
+            arguments?.clear()
         }
 
         return binding.root

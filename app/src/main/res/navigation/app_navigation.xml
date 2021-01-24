@@ -44,10 +44,7 @@
             app:destination="@id/writeReviewScreen" />
         <action
             android:id="@+id/action_place_details_to_home"
-            app:destination="@id/mapScreen"
-            app:launchSingleTop="true"
-            app:popUpTo="@id/mapScreen"
-            app:popUpToInclusive="true">
+            app:destination="@id/mapScreen">
             <argument
                 android:name="place"
                 app:argType="com.example.navigationtestapp.models.Place" />

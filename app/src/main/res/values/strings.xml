@@ -9,6 +9,8 @@
     <string name="add_marker_button">Add marker on map</string>
     <string name="write_review_button">Write a review</string>
     <string name="install_button">Install</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="installed_text">Installed</string>
     <string name="send_review_button">Send</string>
     <string name="review_sent_text">Review sent successfully</string>
 </resources>
