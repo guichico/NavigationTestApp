@@ -6,8 +6,8 @@
     "type": "Coffee",
     "imageUrl": "https://logos-download.com/wp-content/uploads/2016/03/Starbucks_logo_emblem_logotype.png",
     "latLong": [
-      40.75578057805433,
-      -73.99381599126036
+      41.12753033350555,
+      -8.604000807480345
     ]
   },
   {
@@ -15,104 +15,164 @@
     "name": "ATM",
     "distance": "100 m",
     "type": "ATM",
-    "imageUrl": "https://logos-download.com/wp-content/uploads/2019/11/ATMChain_ATM_Logo.png"
+    "imageUrl": "https://logos-download.com/wp-content/uploads/2019/11/ATMChain_ATM_Logo.png",
+    "latLong": [
+      41.148185376426824,
+      -8.608998685112617
+    ]
   },
   {
     "id": "PLA3",
     "name": "McDonald´s",
     "distance": "150 m",
     "type": "Fast food",
-    "imageUrl": "https://logos-download.com/wp-content/uploads/2016/03/McDonalds_logo_red.png"
+    "imageUrl": "https://logos-download.com/wp-content/uploads/2016/03/McDonalds_logo_red.png",
+    "latLong": [
+      41.14740715428762,
+      -8.610760120258321
+    ]
   },
   {
     "id": "PLA4",
     "name": "Zara",
     "distance": "150 m",
     "type": "Clothing store",
-    "imageUrl": "https://logos-download.com/wp-content/uploads/2016/02/Zara_Logo_png_transparent.png"
+    "imageUrl": "https://logos-download.com/wp-content/uploads/2016/02/Zara_Logo_png_transparent.png",
+    "latLong": [
+      41.17999645280366,
+      -8.656612587335458
+    ]
   },
   {
     "id": "PLA5",
     "name": "Subway",
     "distance": "200 m",
     "type": "Fast food",
-    "imageUrl": "https://logos-download.com/wp-content/uploads/2016/03/Subway_logo_logotype_emblem.png"
+    "imageUrl": "https://logos-download.com/wp-content/uploads/2016/03/Subway_logo_logotype_emblem.png",
+    "latLong": [
+      41.11921431497118,
+      -8.620945055386306
+    ]
   },
   {
     "id": "PLA6",
     "name": "KFC",
     "distance": "250 m",
     "type": "Fast food",
-    "imageUrl": "https://logos-download.com/wp-content/uploads/2016/03/KFC_logo_emblem_logotype.png"
+    "imageUrl": "https://logos-download.com/wp-content/uploads/2016/03/KFC_logo_emblem_logotype.png",
+    "latLong": [
+      41.18658205590408,
+      -8.601762440563048
+    ]
   },
   {
     "id": "PLA7",
     "name": "Central Station",
     "distance": "280 m",
     "type": "Train station",
-    "imageUrl": "https://logos-download.com/wp-content/uploads/2019/07/Kimanis_Railway_Station_Logo.png"
+    "imageUrl": "https://logos-download.com/wp-content/uploads/2019/07/Kimanis_Railway_Station_Logo.png",
+    "latLong": [
+      41.14577806695417,
+      -8.610521714264737
+    ]
   },
   {
     "id": "PLA8",
     "name": "Pizza Hut",
     "distance": "300 m",
     "type": "Pizza",
-    "imageUrl": "https://logos-download.com/wp-content/uploads/2016/04/Pizza_Hut_logo_red.png"
+    "imageUrl": "https://logos-download.com/wp-content/uploads/2016/04/Pizza_Hut_logo_red.png",
+    "latLong": [
+      41.15711629640251,
+      -8.681951960597072
+    ]
   },
   {
     "id": "PLA9",
     "name": "Domino´s",
     "distance": "300 m",
     "type": "Pizza",
-    "imageUrl": "https://logos-download.com/wp-content/uploads/2019/01/Dominos_Pizza_Logo.png"
+    "imageUrl": "https://logos-download.com/wp-content/uploads/2019/01/Dominos_Pizza_Logo.png",
+    "latLong": [
+      41.161296988865516,
+      -8.624359339506343
+    ]
   },
   {
     "id": "PLA10",
     "name": "Greatest Building",
     "distance": "320 m",
     "type": "Touristic attraction",
-    "imageUrl": "https://logos-download.com/wp-content/uploads/2019/07/Izhevsk_Machinebuilding_Plant_Logo.png"
+    "imageUrl": "https://logos-download.com/wp-content/uploads/2019/07/Izhevsk_Machinebuilding_Plant_Logo.png",
+    "latLong": [
+      41.14311943689359,
+      -8.61110095750322
+    ]
   },
   {
     "id": "PLA11",
     "name": "Awesome Museum",
     "distance": "330 m",
     "type": "National museum",
-    "imageUrl": "https://logos-download.com/wp-content/uploads/2019/01/Street_Art_Museum_Logo.png"
+    "imageUrl": "https://logos-download.com/wp-content/uploads/2019/01/Street_Art_Museum_Logo.png",
+    "latLong": [
+      41.14796345012294,
+      -8.621588238070617
+    ]
   },
   {
     "id": "PLA12",
     "name": "Taco Bell",
     "distance": "350 m",
     "type": "Mexican food",
-    "imageUrl": "https://logos-download.com/wp-content/uploads/2018/09/Taco_Bell_Logo.png"
+    "imageUrl": "https://logos-download.com/wp-content/uploads/2018/09/Taco_Bell_Logo.png",
+    "latLong": [
+      41.18076155204874,
+      -8.655108015827338
+    ]
   },
   {
     "id": "PLA13",
     "name": "Biggest Arena",
     "distance": "400 m",
     "type": "Arena",
-    "imageUrl": "https://logos-download.com/wp-content/uploads/2018/03/Arena_logo_black.png"
+    "imageUrl": "https://logos-download.com/wp-content/uploads/2018/03/Arena_logo_black.png",
+    "latLong": [
+      41.14701865628354,
+      -8.625735800485906
+    ]
   },
   {
     "id": "PLA14",
     "name": "Street Market",
     "distance": "430 m",
     "type": "Hypermarket",
-    "imageUrl": "https://logos-download.com/wp-content/uploads/2019/11/Healthy_Living_Market_Logo.png"
+    "imageUrl": "https://logos-download.com/wp-content/uploads/2019/11/Healthy_Living_Market_Logo.png",
+    "latLong": [
+      41.13839092792707,
+      -8.63575816228006
+    ]
   },
   {
     "id": "PLA15",
     "name": " City University",
     "distance": "470 m",
     "type": "University",
-    "imageUrl": "https://logos-download.com/wp-content/uploads/2020/07/Binghamton_University_Logo.png"
+    "imageUrl": "https://logos-download.com/wp-content/uploads/2020/07/Binghamton_University_Logo.png",
+    "latLong": [
+      41.14662119637208,
+      -8.61557905262794
+    ]
   },
   {
     "id": "PLA16",
     "name": "Fancy Hospital",
     "distance": "500 m",
     "type": "Private hospital",
-    "imageUrl": "https://logos-download.com/wp-content/uploads/2019/11/Clinton_Memorial_Hospital_Logo.png"
+    "imageUrl": "https://logos-download.com/wp-content/uploads/2019/11/Clinton_Memorial_Hospital_Logo.png",
+    "latLong": [
+      41.1816299226901,
+      -8.600750788167883
+    ]
   }
 ]

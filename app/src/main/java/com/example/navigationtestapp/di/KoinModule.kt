@@ -25,7 +25,7 @@ val appModule = module {
 
     // ViewModel´s
     viewModel { MainActivityViewModel(get()) }
-    viewModel { MapViewModel() }
+    viewModel { MapViewModel(get()) }
     viewModel { NearbyPlacesViewModel(get()) }
     viewModel { PlaceDetailViewModel(get()) }
     viewModel { NotificationsViewModel(get()) }

@@ -20,7 +20,7 @@ class MapService(
 ) {
 
     companion object {
-        private const val DEFAULT_ZOOM = 15F
+        const val DEFAULT_ZOOM = 15F
     }
 
     private lateinit var locationManager: LocationManager

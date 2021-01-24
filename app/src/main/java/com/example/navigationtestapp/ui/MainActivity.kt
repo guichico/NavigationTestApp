@@ -3,16 +3,15 @@ package com.example.navigationtestapp.ui
 import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.LiveData
-import androidx.navigation.NavController
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.example.navigationtestapp.R
 import com.example.navigationtestapp.databinding.ActivityMainBinding
-import com.example.navigationtestapp.utils.setupWithNavController
 import com.example.navigationtestapp.viewmodel.MainActivityViewModel
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -28,13 +27,20 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private val mainActivityViewModel: MainActivityViewModel by viewModel()
 
-    private lateinit var binding: ActivityMainBinding
-    private var currentNavController: LiveData<NavController>? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        val binding =
+            DataBindingUtil.setContentView(this, R.layout.activity_main) as ActivityMainBinding
+
+        val navController = findNavController(R.id.nav_host_fragment_activity_main)
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
+        val appBarConfiguration = AppBarConfiguration(
+            setOf(R.id.mapScreen, R.id.nearbyScreen, R.id.notificationsScreen)
+        )
+        setupActionBarWithNavController(navController, appBarConfiguration)
+        binding.navView.setupWithNavController(navController)
 
         if (!hasFineLocationPermission()) {
             ActivityCompat.requestPermissions(
@@ -45,18 +51,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         } else {
             startMap()
         }
-
-        if (savedInstanceState == null) {
-            setupBottomNavigationBar()
-        } // Else, need to wait for onRestoreInstanceState
-    }
-
-    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
-        super.onRestoreInstanceState(savedInstanceState)
-        // Now that BottomNavigationBar has restored its instance state
-        // and its selectedItemId, we can proceed with setting up the
-        // BottomNavigationBar with Navigation
-        setupBottomNavigationBar()
     }
 
     override fun onDestroy() {
@@ -65,10 +59,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         }
 
         super.onDestroy()
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        return currentNavController?.value?.navigateUp() ?: false
     }
 
     override fun onRequestPermissionsResult(
@@ -103,35 +93,4 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
             this,
             Manifest.permission.ACCESS_FINE_LOCATION
         ) == PackageManager.PERMISSION_GRANTED
-
-    private fun setupBottomNavigationBar() {
-        val navGraphIds = listOf(
-            R.navigation.map,
-            R.navigation.nearby,
-            R.navigation.notifications
-        )
-
-        // Setup the bottom navigation view with a list of navigation graphs
-        val controller = binding.navView.setupWithNavController(
-            navGraphIds = navGraphIds,
-            fragmentManager = supportFragmentManager,
-            containerId = R.id.nav_host_container,
-            intent = intent
-        )
-
-        // Whenever the selected controller changes, setup the action bar.
-        controller.observe(this, { navController ->
-            setupActionBarWithNavController(navController)
-
-            navController.addOnDestinationChangedListener { _, destination, _ ->
-                when (destination.id) {
-                    R.id.mapScreen,
-                    R.id.nearbyScreen,
-                    R.id.notificationsScreen -> binding.navView.visibility = View.VISIBLE
-                    else -> binding.navView.visibility = View.GONE
-                }
-            }
-        })
-        currentNavController = controller
-    }
 }

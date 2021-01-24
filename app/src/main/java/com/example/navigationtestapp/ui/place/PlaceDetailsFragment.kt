@@ -1,20 +1,16 @@
 package com.example.navigationtestapp.ui.place
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.navigationtestapp.R
 import com.example.navigationtestapp.databinding.FragmentPlaceDetailBinding
-import com.example.navigationtestapp.ui.MainActivity
 import com.example.navigationtestapp.viewmodel.place.PlaceDetailViewModel
-import com.google.android.gms.maps.MapFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class PlaceDetailsFragment : Fragment() {
@@ -38,7 +34,10 @@ class PlaceDetailsFragment : Fragment() {
 
         binding.place = placeDetailViewModel.getPlaceDetails(args.place.id)
 
-        binding.goToButton.setOnClickListener {
+        binding.addMarkerButton.setOnClickListener {
+            findNavController().navigate(
+                PlaceDetailsFragmentDirections.actionPlaceDetailsToHome(binding.place!!)
+            )
         }
 
         binding.writeAReviewButton.setOnClickListener {

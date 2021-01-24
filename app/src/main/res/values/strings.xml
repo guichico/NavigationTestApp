@@ -6,7 +6,7 @@
     <string name="title_notifications">Notifications</string>
     <string name="title_place_detail">Place detail</string>
     <string name="title_store">Store</string>
-    <string name="go_to_location_button">Go to location</string>
+    <string name="add_marker_button">Add marker on map</string>
     <string name="write_review_button">Write a review</string>
     <string name="install_button">Install</string>
     <string name="send_review_button">Send</string>

@@ -2,17 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/map_navigation"
+        android:id="@+id/mapScreen"
         android:icon="@drawable/ic_home_black_24dp"
         android:title="@string/title_map" />
 
     <item
-        android:id="@+id/nearby_navigation"
+        android:id="@+id/nearbyScreen"
         android:icon="@drawable/ic_dashboard_black_24dp"
         android:title="@string/title_nearby" />
 
     <item
-        android:id="@+id/notifications_navigation"
+        android:id="@+id/notificationsScreen"
         android:icon="@drawable/ic_notifications_black_24dp"
         android:title="@string/title_notifications" />
 
