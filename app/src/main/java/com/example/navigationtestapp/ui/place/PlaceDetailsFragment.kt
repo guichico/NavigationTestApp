@@ -34,9 +34,15 @@ class PlaceDetailsFragment : Fragment() {
 
         binding.place = placeDetailViewModel.getPlaceDetails(args.place.id)
 
+        binding.seeLocationOnMapButton.setOnClickListener {
+            findNavController().navigate(
+                PlaceDetailsFragmentDirections.actionPlaceDetailsToLocationOnMap(binding.place!!)
+            )
+        }
+
         binding.addMarkerButton.setOnClickListener {
             findNavController().navigate(
-                PlaceDetailsFragmentDirections.actionPlaceDetailsToHome(binding.place!!)
+                PlaceDetailsFragmentDirections.actionPlaceDetailsToMap(binding.place!!)
             )
         }
 

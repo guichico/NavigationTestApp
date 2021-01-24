@@ -11,7 +11,6 @@ import androidx.navigation.fragment.navArgs
 import com.example.navigationtestapp.R
 import com.example.navigationtestapp.databinding.FragmentMapBinding
 import com.example.navigationtestapp.models.Place
-import com.example.navigationtestapp.models.toLatLng
 import com.example.navigationtestapp.viewmodel.map.MapViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

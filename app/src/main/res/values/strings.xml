@@ -1,11 +1,15 @@
 <resources>
     <string name="app_name">NavigationTestApp</string>
+    <string name="app_subtitle">Best app ever</string>
     <string name="title_map">Map</string>
     <string name="title_nearby">Nearby</string>
     <string name="title_favorites">Favorites</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_place_detail">Place detail</string>
     <string name="title_store">Store</string>
+    <string name="title_settings">Settings</string>
+    <string name="title_support">Support</string>
+    <string name="see_location_on_map">See location on map</string>
     <string name="add_marker_button">Add marker on map</string>
     <string name="write_review_button">Write a review</string>
     <string name="install_button">Install</string>
@@ -13,4 +17,9 @@
     <string name="installed_text">Installed</string>
     <string name="send_review_button">Send</string>
     <string name="review_sent_text">Review sent successfully</string>
+    <string name="settings_menu">Settings</string>
+    <string name="downloads_menu">Downloads</string>
+    <string name="support_menu">Support</string>
+    <string name="settings_fragment_text">This is the settings fragment</string>
+    <string name="this_is_the_support_fragment">This is the support fragment</string>
 </resources>

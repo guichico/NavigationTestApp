@@ -3,13 +3,14 @@ package com.example.navigationtestapp.ui
 import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.NavController
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
+import androidx.navigation.ui.*
 import com.example.navigationtestapp.R
 import com.example.navigationtestapp.databinding.ActivityMainBinding
 import com.example.navigationtestapp.viewmodel.MainActivityViewModel
@@ -25,6 +26,9 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         private const val REQUEST_LOCATION_PERMISSION = 1
     }
 
+    private lateinit var appBarConfiguration: AppBarConfiguration
+    private lateinit var navController: NavController
+
     private val mainActivityViewModel: MainActivityViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,14 +37,28 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         val binding =
             DataBindingUtil.setContentView(this, R.layout.activity_main) as ActivityMainBinding
 
-        val navController = findNavController(R.id.nav_host_fragment_activity_main)
+        navController = findNavController(R.id.nav_host_fragment)
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.mapScreen,
+                R.id.nearbyScreen,
+                R.id.notificationsScreen -> binding.bottomNavView.visibility = View.VISIBLE
+                else -> binding.bottomNavView.visibility = View.GONE
+            }
+        }
+
+        binding.bottomNavView.setupWithNavController(navController)
+        binding.sideNavView.setupWithNavController(navController)
+
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(R.id.mapScreen, R.id.nearbyScreen, R.id.notificationsScreen)
+        appBarConfiguration = AppBarConfiguration(
+            setOf(R.id.mapScreen, R.id.nearbyScreen, R.id.notificationsScreen),
+            binding.drawerLayout
         )
+
         setupActionBarWithNavController(navController, appBarConfiguration)
-        binding.navView.setupWithNavController(navController)
 
         if (!hasFineLocationPermission()) {
             ActivityCompat.requestPermissions(
@@ -51,6 +69,14 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         } else {
             startMap()
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return item.onNavDestinationSelected(navController) || super.onOptionsItemSelected(item)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
     override fun onDestroy() {

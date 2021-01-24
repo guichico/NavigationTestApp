@@ -26,6 +26,8 @@ class MapService(
     private lateinit var locationManager: LocationManager
     lateinit var gMap: GoogleMap
 
+    private val markers = mutableMapOf<String, MarkerOptions>()
+
     @SuppressLint("MissingPermission")
     fun startMap(map: GoogleMap) {
         locationManager = context.getSystemService(Context.LOCATION_SERVICE) as LocationManager
@@ -73,7 +75,20 @@ class MapService(
 
     fun addMarker(place: Place) {
         val position = place.latLong.toLatLng()
-        gMap.addMarker(MarkerOptions().position(position).title(place.name))
+        val marker = MarkerOptions().position(position).title(place.name)
+
+        markers[place.name] = marker
+
+        gMap.addMarker(marker)
         moveToLocation(position, DEFAULT_ZOOM)
+    }
+
+    fun removeMarker(place: Place) {
+        markers.remove(place.name)
+
+        gMap.clear()
+        markers.forEach {
+            gMap.addMarker(it.value)
+        }
     }
 }

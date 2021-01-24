@@ -83,6 +83,16 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <Button
+            android:id="@+id/see_location_on_map_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/see_location_on_map"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/texts_layout" />
+
+        <Button
             android:id="@+id/add_marker_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -90,7 +100,7 @@
             android:text="@string/add_marker_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/texts_layout" />
+            app:layout_constraintTop_toBottomOf="@+id/see_location_on_map_button" />
 
         <Button
             android:id="@+id/write_a_review_button"

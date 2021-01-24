@@ -9,8 +9,10 @@ import com.example.navigationtestapp.viewmodel.MainActivityViewModel
 import com.example.navigationtestapp.viewmodel.map.MapViewModel
 import com.example.navigationtestapp.viewmodel.nearby.NearbyPlacesViewModel
 import com.example.navigationtestapp.viewmodel.notifications.NotificationsViewModel
+import com.example.navigationtestapp.viewmodel.place.LocationOnMapViewModel
 import com.example.navigationtestapp.viewmodel.place.PlaceDetailViewModel
 import com.example.navigationtestapp.viewmodel.store.ProductDetailViewModel
+import com.example.navigationtestapp.viewmodel.store.StoreViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -27,9 +29,11 @@ val appModule = module {
     viewModel { MainActivityViewModel(get()) }
     viewModel { MapViewModel(get()) }
     viewModel { NearbyPlacesViewModel(get()) }
-    viewModel { PlaceDetailViewModel(get()) }
     viewModel { NotificationsViewModel(get()) }
+    viewModel { PlaceDetailViewModel(get()) }
+    viewModel { LocationOnMapViewModel(get()) }
     viewModel { ProductDetailViewModel(get()) }
+    viewModel { StoreViewModel(get()) }
 
     // Services
     single { MapService(androidContext(), get()) }

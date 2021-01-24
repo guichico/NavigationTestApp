@@ -24,11 +24,7 @@
         tools:layout="@layout/fragment_nearby_places">
         <action
             android:id="@+id/action_nearby_to_place_detail"
-            app:destination="@id/placeDetailScreen">
-            <argument
-                android:name="place"
-                app:argType="com.example.navigationtestapp.models.Place" />
-        </action>
+            app:destination="@id/placeDetailScreen" />
     </fragment>
 
     <fragment
@@ -43,12 +39,23 @@
             android:id="@+id/action_place_details_to_write_review"
             app:destination="@id/writeReviewScreen" />
         <action
-            android:id="@+id/action_place_details_to_home"
-            app:destination="@id/mapScreen">
-            <argument
-                android:name="place"
-                app:argType="com.example.navigationtestapp.models.Place" />
-        </action>
+            android:id="@+id/action_place_details_to_map"
+            app:destination="@id/mapScreen"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/mapScreen"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_place_details_to_location_on_map"
+            app:destination="@id/locationOnMapScreen" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/locationOnMapScreen"
+        android:name="com.example.navigationtestapp.ui.place.LocationOnMapFragment"
+        tools:layout="@layout/fragment_map">
+        <argument
+            android:name="place"
+            app:argType="com.example.navigationtestapp.models.Place" />
     </fragment>
 
     <dialog
@@ -72,11 +79,7 @@
         tools:layout="@layout/fragment_notifications">
         <action
             android:id="@+id/action_notification_to_place"
-            app:destination="@id/placeDetailScreen">
-            <argument
-                android:name="place"
-                app:argType="com.example.navigationtestapp.models.Place" />
-        </action>
+            app:destination="@id/placeDetailScreen" />
         <action
             android:id="@+id/action_notification_to_product_detail"
             app:destination="@id/productDetailScreen" />
@@ -90,5 +93,27 @@
             android:name="id"
             app:argType="string" />
     </fragment>
+
+    <fragment
+        android:id="@+id/settingsScreen"
+        android:name="com.example.navigationtestapp.ui.settings.SettingsFragment"
+        android:label="@string/title_settings"
+        tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/downloadsScreen"
+        android:name="com.example.navigationtestapp.ui.store.StoreFragment"
+        android:label="@string/title_store"
+        tools:layout="@layout/fragment_store">
+        <action
+            android:id="@+id/action_store_to_product_detail"
+            app:destination="@id/productDetailScreen" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/supportScreen"
+        android:name="com.example.navigationtestapp.ui.support.SupportFragment"
+        android:label="@string/title_support"
+        tools:layout="@layout/fragment_support" />
 
 </navigation>
