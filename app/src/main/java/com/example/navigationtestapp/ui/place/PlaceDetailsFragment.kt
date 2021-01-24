@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.navigationtestapp.R
 import com.example.navigationtestapp.databinding.FragmentPlaceDetailBinding
+import com.example.navigationtestapp.models.Place
 import com.example.navigationtestapp.viewmodel.place.PlaceDetailViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -32,26 +33,33 @@ class PlaceDetailsFragment : Fragment() {
                 false
             ) as FragmentPlaceDetailBinding
 
-        binding.place = placeDetailViewModel.getPlaceDetails(args.place.id)
+        val place = placeDetailViewModel.getPlaceDetails(args.place.id)
+        binding.place = place
 
-        binding.seeLocationOnMapButton.setOnClickListener {
-            findNavController().navigate(
-                PlaceDetailsFragmentDirections.actionPlaceDetailsToLocationOnMap(binding.place!!)
-            )
-        }
-
-        binding.addMarkerButton.setOnClickListener {
-            findNavController().navigate(
-                PlaceDetailsFragmentDirections.actionPlaceDetailsToMap(binding.place!!)
-            )
-        }
-
-        binding.writeAReviewButton.setOnClickListener {
-            findNavController().navigate(
-                PlaceDetailsFragmentDirections.actionPlaceDetailsToWriteReview()
-            )
-        }
+        binding.seeLocationOnMapButton.setOnClickListener { seeLocationOnMapClicked(place!!) }
+        binding.addMarkerButton.setOnClickListener { addMarkerClicked(place!!) }
+        binding.writeAReviewButton.setOnClickListener { writeAReviewClicked() }
 
         return binding.root
+    }
+
+    private fun seeLocationOnMapClicked(place: Place) {
+        findNavController().navigate(
+            PlaceDetailsFragmentDirections.actionPlaceDetailsToLocationOnMap(place)
+        )
+    }
+
+    private fun addMarkerClicked(place: Place) {
+        placeDetailViewModel.addMarker(place)
+
+        findNavController().navigate(
+            PlaceDetailsFragmentDirections.actionPlaceDetailsToMap()
+        )
+    }
+
+    private fun writeAReviewClicked() {
+        findNavController().navigate(
+            PlaceDetailsFragmentDirections.actionPlaceDetailsToWriteReview()
+        )
     }
 }

@@ -9,13 +9,7 @@
         android:id="@+id/mapScreen"
         android:name="com.example.navigationtestapp.ui.map.MapFragment"
         android:label="@string/title_map"
-        tools:layout="@layout/fragment_map">
-        <argument
-            android:name="place"
-            android:defaultValue="@null"
-            app:argType="com.example.navigationtestapp.models.Place"
-            app:nullable="true" />
-    </fragment>
+        tools:layout="@layout/fragment_map" />
 
     <fragment
         android:id="@+id/nearbyScreen"

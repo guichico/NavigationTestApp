@@ -30,7 +30,7 @@ val appModule = module {
     viewModel { MapViewModel(get()) }
     viewModel { NearbyPlacesViewModel(get()) }
     viewModel { NotificationsViewModel(get()) }
-    viewModel { PlaceDetailViewModel(get()) }
+    viewModel { PlaceDetailViewModel(get(), get()) }
     viewModel { LocationOnMapViewModel(get()) }
     viewModel { ProductDetailViewModel(get()) }
     viewModel { StoreViewModel(get()) }
