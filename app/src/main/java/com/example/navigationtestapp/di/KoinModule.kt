@@ -1,6 +1,6 @@
 package com.example.navigationtestapp
 
-import com.example.navigationtestapp.datastore.UserSettings
+import com.example.navigationtestapp.datastore.PersistentSettings
 import com.example.navigationtestapp.repositiory.NotificationsRepository
 import com.example.navigationtestapp.repositiory.PlacesRepository
 import com.example.navigationtestapp.repositiory.ProductsRepository
@@ -18,7 +18,7 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val appModule = module {
-    single { UserSettings(androidContext()) }
+    single { PersistentSettings(androidContext()) }
 
     // Repositories
     single { PlacesRepository(androidContext()) }

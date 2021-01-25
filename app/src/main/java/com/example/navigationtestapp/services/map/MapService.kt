@@ -3,7 +3,7 @@ package com.example.navigationtestapp.services.map
 import android.annotation.SuppressLint
 import android.content.Context
 import android.location.LocationManager
-import com.example.navigationtestapp.datastore.UserSettings
+import com.example.navigationtestapp.datastore.PersistentSettings
 import com.example.navigationtestapp.models.Place
 import com.example.navigationtestapp.models.toLatLng
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -15,7 +15,7 @@ import kotlinx.coroutines.flow.collect
 
 class MapService(
     private val context: Context,
-    private val userSettings: UserSettings
+    private val persistentSettings: PersistentSettings
 ) {
 
     companion object {
@@ -42,8 +42,8 @@ class MapService(
 
     suspend fun saveMapLocationAndZoom() {
         coroutineScope {
-            userSettings.saveLastLocation(gMap.cameraPosition.target)
-            userSettings.saveZoom(gMap.cameraPosition.zoom)
+            persistentSettings.saveLastLocation(gMap.cameraPosition.target)
+            persistentSettings.saveZoom(gMap.cameraPosition.zoom)
         }
     }
 
@@ -56,7 +56,7 @@ class MapService(
     }
 
     suspend fun moveToLocation(latLng: LatLng) {
-        userSettings.getZoom()
+        persistentSettings.getZoom()
             .collect { zoom ->
                 moveToLocation(latLng, zoom)
             }
@@ -66,7 +66,7 @@ class MapService(
         gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, zoom))
 
     suspend fun moveToLastLocation() {
-        userSettings.getLastLocation()
+        persistentSettings.getLastLocation()
             .collect {
                 moveToLocation(it)
             }

@@ -6,7 +6,7 @@ import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
 
-class UserSettings(val context: Context) {
+class PersistentSettings(val context: Context) {
 
     companion object {
         private const val DEFAULT_ZOOM = 15F
