@@ -3,12 +3,12 @@
 
     <item
         android:id="@+id/mapScreen"
-        android:icon="@drawable/ic_home_black_24dp"
+        android:icon="@drawable/ic_map"
         android:title="@string/title_map" />
 
     <item
         android:id="@+id/nearbyScreen"
-        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:icon="@drawable/ic_nearby"
         android:title="@string/title_nearby" />
 
     <item
