@@ -36,14 +36,6 @@ class ProductDetailFragment : Fragment() {
         binding.product = productDetailViewModel.getProductDetails(args.id)
         binding.viewModel = productDetailViewModel
 
-        binding.installButton.setOnClickListener {
-            productDetailViewModel.startDownload()
-        }
-
-        binding.cancelButton.setOnClickListener {
-            productDetailViewModel.cancelDownload()
-        }
-
         return binding.root
     }
 }

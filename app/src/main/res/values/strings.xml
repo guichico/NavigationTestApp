@@ -21,6 +21,7 @@
     <string name="cancel_button">Cancel</string>
     <string name="installed_text">Installed</string>
     <string name="send_review_button">Send</string>
+    <string name="purchase_button">Purchase</string>
     <string name="review_sent_text">Review sent successfully</string>
     <string name="settings_menu">Settings</string>
     <string name="downloads_menu">Downloads</string>

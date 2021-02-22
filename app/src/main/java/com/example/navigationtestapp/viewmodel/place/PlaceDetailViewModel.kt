@@ -1,6 +1,7 @@
 package com.example.navigationtestapp.viewmodel.place
 
 import androidx.lifecycle.ViewModel
+import androidx.navigation.fragment.NavHostFragment
 import com.example.navigationtestapp.models.Place
 import com.example.navigationtestapp.repositiory.PlacesRepository
 import com.example.navigationtestapp.services.map.MapService

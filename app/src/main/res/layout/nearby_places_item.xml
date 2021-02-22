@@ -8,12 +8,17 @@
         <variable
             name="place"
             type="com.example.navigationtestapp.models.Place" />
+
+        <variable
+            name="clickListener"
+            type="com.example.navigationtestapp.ui.nearby.NearbyPlacesFragment.NearbyListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/background_light">
+        android:background="@android:color/background_light"
+        android:onClick="@{() -> clickListener.onClick(place)}">
 
         <ImageView
             android:id="@+id/place_image"

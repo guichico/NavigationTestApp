@@ -24,10 +24,11 @@ class SupportStep2Fragment : Fragment() {
                 false
             ) as FragmentSupportStep2Binding
 
-        binding.nextStepButton.setOnClickListener {
-            findNavController().navigate(SupportStep2FragmentDirections.actionStep2ToStep3())
-        }
+        binding.fragment = this
 
         return binding.root
     }
+
+    fun goToNextStep() =
+        findNavController().navigate(SupportStep2FragmentDirections.actionStep2ToStep3())
 }

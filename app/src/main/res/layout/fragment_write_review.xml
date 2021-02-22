@@ -4,6 +4,10 @@
 
     <data>
 
+        <variable
+            name="fragment"
+            type="com.example.navigationtestapp.ui.place.WriteReviewFragment" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -20,6 +24,7 @@
             android:backgroundTint="@color/gray_light"
             android:gravity="top"
             android:inputType="textMultiLine"
+            android:onClick="@{() -> fragment.sendReview()}"
             android:padding="15dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

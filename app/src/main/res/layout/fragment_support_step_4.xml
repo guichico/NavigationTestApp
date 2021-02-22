@@ -4,6 +4,9 @@
 
     <data>
 
+        <variable
+            name="fragment"
+            type="com.example.navigationtestapp.ui.support.SupportStep4Fragment" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,6 +18,7 @@
             android:id="@+id/next_step_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="@{() -> fragment.goToNextStep()}"
             android:padding="15dp"
             android:text="@string/are_you_still_here_text"
             android:textSize="18sp"

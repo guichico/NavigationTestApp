@@ -33,33 +33,25 @@ class PlaceDetailsFragment : Fragment() {
                 false
             ) as FragmentPlaceDetailBinding
 
-        val place = placeDetailViewModel.getPlaceDetails(args.place.id)
-        binding.place = place
-
-        binding.seeLocationOnMapButton.setOnClickListener { seeLocationOnMapClicked(place!!) }
-        binding.addMarkerButton.setOnClickListener { addMarkerClicked(place!!) }
-        binding.writeAReviewButton.setOnClickListener { writeAReviewClicked() }
+        binding.fragment = this
+        binding.place = placeDetailViewModel.getPlaceDetails(args.place.id)
 
         return binding.root
     }
 
-    private fun seeLocationOnMapClicked(place: Place) {
+    fun seeLocationOnMap(place: Place) {
         findNavController().navigate(
             PlaceDetailsFragmentDirections.actionPlaceDetailsToLocationOnMap(place)
         )
     }
 
-    private fun addMarkerClicked(place: Place) {
+    fun addMarker(place: Place) {
         placeDetailViewModel.addMarker(place)
 
-        findNavController().navigate(
-            PlaceDetailsFragmentDirections.actionPlaceDetailsToMap()
-        )
+        findNavController().navigate(PlaceDetailsFragmentDirections.actionPlaceDetailsToMap())
     }
 
-    private fun writeAReviewClicked() {
-        findNavController().navigate(
-            PlaceDetailsFragmentDirections.actionPlaceDetailsToWriteReview()
-        )
+    fun writeAReview() {
+        findNavController().navigate(PlaceDetailsFragmentDirections.actionPlaceDetailsToWriteReview())
     }
 }

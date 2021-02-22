@@ -28,4 +28,8 @@ class ProductDetailViewModel(private val productsRepository: ProductsRepository)
         installTask.cancel()
         installStatus.postValue(NONE)
     }
+
+    fun purchaseProduct() {
+
+    }
 }

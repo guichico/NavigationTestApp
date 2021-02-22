@@ -25,12 +25,14 @@ class WriteReviewFragment : BottomSheetDialogFragment() {
                 false
             ) as FragmentWriteReviewBinding
 
-        binding.sendReviewButton.setOnClickListener {
-            findNavController().navigate(
-                WriteReviewFragmentDirections.actionWriteReviewToReviewSent()
-            )
-        }
+        binding.fragment = this
 
         return binding.root
+    }
+
+    fun sendReview() {
+        findNavController().navigate(
+            WriteReviewFragmentDirections.actionWriteReviewToReviewSent()
+        )
     }
 }

@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.navigationtestapp.R
 import com.example.navigationtestapp.databinding.FragmentStoreBinding
@@ -34,13 +34,28 @@ class StoreFragment : Fragment() {
 
         binding.storeList.apply {
             setHasFixedSize(true)
-            adapter = StoreAdapter(storeViewModel.getProducts())
+            adapter = StoreAdapter(
+                storeViewModel.getProducts(),
+                ProductListener { goToProductDetails(it) })
         }
 
         return binding.root
     }
 
-    class StoreAdapter(private val products: List<Product>) :
+    private fun goToProductDetails(product: Product) {
+        findNavController().navigate(
+            StoreFragmentDirections.actionStoreToProductDetail(product.id)
+        )
+    }
+
+    class ProductListener(val clickListener: (product: Product) -> Unit) {
+        fun onClick(product: Product) = clickListener(product)
+    }
+
+    class StoreAdapter(
+        private val products: List<Product>,
+        private val clickListener: ProductListener
+    ) :
         RecyclerView.Adapter<StoreViewHolder>() {
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StoreViewHolder {
@@ -55,7 +70,7 @@ class StoreFragment : Fragment() {
 
         override fun onBindViewHolder(holder: StoreViewHolder, position: Int) {
             val product = products[position]
-            holder.bind(product)
+            holder.bind(product, clickListener)
         }
 
         override fun getItemCount(): Int = products.size
@@ -64,13 +79,10 @@ class StoreFragment : Fragment() {
 
     class StoreViewHolder(private val binding: StoreItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(product: Product) {
+        fun bind(product: Product, clickListener: ProductListener) {
             binding.product = product
-            binding.root.setOnClickListener {
-                binding.root.findNavController().navigate(
-                    StoreFragmentDirections.actionStoreToProductDetail(product.id)
-                )
-            }
+            binding.clickListener = clickListener
+
             binding.executePendingBindings()
         }
     }

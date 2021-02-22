@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.navigationtestapp.R
 import com.example.navigationtestapp.databinding.FragmentNotificationsBinding
@@ -34,13 +34,35 @@ class NotificationsFragment : Fragment() {
 
         binding.notificationsList.apply {
             setHasFixedSize(true)
-            adapter = NotificationsAdapter(notificationsViewModel.getNotifications())
+            adapter = NotificationsAdapter(
+                notificationsViewModel.getNotifications(),
+                NotificationsListener { notificationClicked(it) })
         }
 
         return binding.root
     }
 
-    class NotificationsAdapter(private val notifications: List<Notification>) :
+    fun notificationClicked(notification: Notification) {
+        val directions = when (notification.type) {
+            Type.PLACE -> NotificationsFragmentDirections.actionNotificationToPlace(
+                Place(notification.referenceId)
+            )
+            Type.PRODUCT -> NotificationsFragmentDirections.actionNotificationToProductDetail(
+                notification.referenceId
+            )
+        }
+
+        findNavController().navigate(directions)
+    }
+
+    class NotificationsListener(val clickListener: (notification: Notification) -> Unit) {
+        fun onClick(notification: Notification) = clickListener(notification)
+    }
+
+    class NotificationsAdapter(
+        private val notifications: List<Notification>,
+        private val clickListener: NotificationsListener
+    ) :
         RecyclerView.Adapter<NotificationViewHolder>() {
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NotificationViewHolder {
@@ -55,7 +77,7 @@ class NotificationsFragment : Fragment() {
 
         override fun onBindViewHolder(holder: NotificationViewHolder, position: Int) {
             val notification = notifications[position]
-            holder.bind(notification)
+            holder.bind(notification, clickListener)
         }
 
         override fun getItemCount(): Int = notifications.size
@@ -64,20 +86,9 @@ class NotificationsFragment : Fragment() {
 
     class NotificationViewHolder(private val binding: NotificationItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(notification: Notification) {
+        fun bind(notification: Notification, clickListener: NotificationsListener) {
             binding.notification = notification
-            binding.root.setOnClickListener {
-                val directions = when (notification.type) {
-                    Type.PLACE -> NotificationsFragmentDirections.actionNotificationToPlace(
-                        Place(notification.referenceId)
-                    )
-                    Type.PRODUCT -> NotificationsFragmentDirections.actionNotificationToProductDetail(
-                        notification.referenceId
-                    )
-                }
-
-                binding.root.findNavController().navigate(directions)
-            }
+            binding.clickListener = clickListener
             binding.executePendingBindings()
         }
     }

@@ -8,6 +8,10 @@
         <variable
             name="place"
             type="com.example.navigationtestapp.models.Place" />
+
+        <variable
+            name="fragment"
+            type="com.example.navigationtestapp.ui.place.PlaceDetailsFragment" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -87,6 +91,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
+            android:onClick="@{() -> fragment.seeLocationOnMap(place)}"
             android:text="@string/see_location_on_map"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -97,6 +102,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
+            android:onClick="@{() -> fragment.addMarker(place)}"
             android:text="@string/add_marker_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -107,6 +113,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
+            android:onClick="@{() -> fragment.writeAReview()}"
             android:text="@string/write_review_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

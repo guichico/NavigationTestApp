@@ -8,11 +8,16 @@
         <variable
             name="notification"
             type="com.example.navigationtestapp.ui.notifications.Notification" />
+
+        <variable
+            name="clickListener"
+            type="com.example.navigationtestapp.ui.notifications.NotificationsFragment.NotificationsListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="@{() -> clickListener.onClick(notification)}"
         android:paddingStart="15dp"
         android:paddingTop="15dp"
         android:paddingEnd="15dp">
@@ -34,9 +39,9 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
             android:textSize="18sp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/notification_icon"
             app:layout_constraintStart_toEndOf="@id/notification_icon"
             app:layout_constraintTop_toTopOf="@id/notification_icon"
-            app:layout_constraintBottom_toBottomOf="@id/notification_icon"
             tools:text="@sample/notifications.json/notifications/title" />
 
         <TextView
