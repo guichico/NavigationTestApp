@@ -35,6 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:backgroundTint="@color/orange"
+            android:onClick="@{() -> fragment.sendReview()}"
             android:text="@string/send_review_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/review_text" />
